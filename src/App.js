@@ -1,23 +1,52 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './components/Home';
+import Signup from './components/Signup';
+import Login from './components/Login';
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap/dist/js/bootstrap.js'
+import Rewards from './components/Rewards';
+import Collection from './components/Collection';
+import { useState } from 'react';
+import { GoEarth } from './utilis';
+import Contactus from './components/Contactus';
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [showErrorMessage, setErrorMessage] = useState("");
+  const [showSuccessMessage, setShowSuccessMessage] = useState("")
+  const [isLoading, setIsLoading] = useState(false) 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <GoEarth.Provider value={{ isLoading, setIsLoading, isLoggedIn, setIsLoggedIn, setErrorMessage, setShowSuccessMessage }}>
+        {showErrorMessage.length > 0 ? (
+          <div class="alert custom-alert alert-danger" role="alert">
+            {showErrorMessage}
+          </div>
+        ) : <></>}
+        {showSuccessMessage.length > 0 ? (
+          <div class="alert custom-alert alert-success" role="alert">
+            {showSuccessMessage}
+          </div>
+        ) : <></>}
+        <Router>
+          <Routes>
+            <Route path="/" element={<Home />} />
+
+            <Route path="/login" element={<Login />} />
+
+            <Route path="/signup" element={<Signup />} />
+
+            <Route path="/add-waste" element={<Collection />} />
+
+            <Route path="/rewards" element={<Rewards />} />
+
+            <Route path="/contact-us" element={<Contactus />} />
+
+
+          </Routes>
+        </Router>
+      </GoEarth.Provider>
     </div>
   );
 }

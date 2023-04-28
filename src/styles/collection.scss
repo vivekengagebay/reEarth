@@ -1,0 +1,23 @@
+.collection-page-container{
+    .card{
+ background-color: #ebfaf0;
+    }
+    .nav-pills .nav-link{
+        color: #198754;
+    }
+    .nav-pills .nav-link.active{
+        background-color: #198754;
+        color: #fff;
+    }
+    .nav-pills{
+        width: 100%;
+    }
+}
+
+.collection-table{
+    .badge{
+        border: none;
+        box-shadow: none;
+        padding: 8px 14px;
+    }
+}
