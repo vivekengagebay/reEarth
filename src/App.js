@@ -11,6 +11,7 @@ import { useState } from 'react';
 import { GoEarth } from './utilis';
 import Contactus from './components/Contactus';
 import AboutUs from './info/AboutUs';
+import CareForPlanet from './info/CareForPlanet';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -46,6 +47,7 @@ function App() {
 
             <Route path="/about-us" element={<AboutUs />} />
 
+            <Route path="/care-for-planet" element={<CareForPlanet />} />
 
           </Routes>
         </Router>
