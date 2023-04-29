@@ -1,3 +1,5 @@
+import Layout from "./Layout";
+
 function Footer() {
     return (
         <div>
@@ -36,17 +38,27 @@ function Footer() {
                             <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
 
                                 <h6 className="text-uppercase fw-bold mb-4">
-                                    <i className="fas fa-gem me-3 text-secondary"></i>GOEarth
+                                    <i className="fas fa-gem me-3 text-secondary"></i>Plasticperks
                                 </h6>
-                                <p>
-                                    Here you can use rows and columns to organize your footer content. Lorem ipsum
-                                    dolor sit amet, consectetur adipisicing elit.
+                                <p> Made with ♥️ in India.
                                 </p>
                             </div>
                             <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4 ">
 
                                 <h6 className="text-uppercase fw-bold mb-4">
-                                    Products
+                                    care for planet
+                                    <Layout>
+                                    Plastic is a bigger challenge in environment sustainability and climate conservation.
+
+Most of plastic is left un recycled around us. We see it everyday, everywhere.
+
+Humans use about 1.2 million plastic bottles per minute in total. Approximately 91% of plastic is not recycled. Roughly half of our global annual plastic production is destined for a single-use product.
+
+Only 9% of plastic waste is recycled (15% is collected for recycling but 40% of that is disposed of as residues).
+
+In fact, more than 40 percent of plastic is used only once before it is thrown away, where it lingers in the environment for a long, long time. It often breaks down into smaller and smaller particles, called microplastics, which can be ingested by both animals and people.
+
+                                    </Layout>
                                 </h6>
                                 <p>
                                     <a href="#!" className="text-reset text-decoration-none">Angular</a>

@@ -10,6 +10,7 @@ import Collection from './components/Collection';
 import { useState } from 'react';
 import { GoEarth } from './utilis';
 import Contactus from './components/Contactus';
+import AboutUs from './info/AboutUs';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -42,6 +43,8 @@ function App() {
             <Route path="/rewards" element={<Rewards />} />
 
             <Route path="/contact-us" element={<Contactus />} />
+
+            <Route path="/about-us" element={<AboutUs />} />
 
 
           </Routes>
