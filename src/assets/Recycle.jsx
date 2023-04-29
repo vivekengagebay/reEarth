@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { GoEarth } from "../utilis";
 
 function Recycle() {
   const initialcollectiondata = [
@@ -43,16 +44,17 @@ function Recycle() {
       addToRecylce: true,
     },
   ];
-
+  const parentContext = useContext(GoEarth);
   const [collectionData, setCollectionData] = useState(initialcollectiondata);
   const [newWaste, setNewWaste] = useState({
     id: 98760987,
-    productCategory: "asd",
+    productCategory: "",
     productType: "",
     quantity: "",
     weight: "",
     addToRecylce: false,
   });
+  const [formErrors, setFormErrors] = useState(true);
 
   function editCollectionData(value, index, key) {
     const updateCollectionData = collectionData;
@@ -66,24 +68,41 @@ function Recycle() {
     setCollectionData([...updateCollectionData]);
   }
 
-  // const emptyWaste = {
-  //   id: 98760987,
-  //   productCategory: "",
-  //   productType: "",
-  //   quantity: "",
-  //   weight: "",
-  //   addToRecylce: false,
-  // };
+  const emptyWaste = {
+    id: 98760987,
+    productCategory: "",
+    productType: "",
+    quantity: "",
+    weight: "",
+    addToRecylce: false,
+  };
 
   function addWaste(value, key) {
     console.log(value, "value", key);
     const updateCollectionData = newWaste;
     updateCollectionData[key] = value;
     setNewWaste({ ...updateCollectionData });
+    if (
+      newWaste.productCategory == emptyWaste.productCategory &&
+      newWaste.productType == emptyWaste.productType &&
+      newWaste.quantity == emptyWaste.quantity &&
+      newWaste.weight == emptyWaste.weight
+    ) {
+      setFormErrors(true);
+    }
+    if (
+      newWaste.productCategory !== emptyWaste.productCategory &&
+      newWaste.productType !== emptyWaste.productType &&
+      newWaste.quantity !== emptyWaste.quantity &&
+      newWaste.weight !== emptyWaste.weight
+    ) {
+      setFormErrors(false);
+    }
+    console.log(formErrors, "formErrors");
   }
 
   function addWasteButton(e) {
-    e.preventDefault()
+    e.preventDefault();
     const updateCollectionData = collectionData;
     updateCollectionData.push(newWaste);
     setCollectionData([...updateCollectionData]);
@@ -167,6 +186,9 @@ function Recycle() {
                 <button
                   className="btn btn-success w-100"
                   onClick={(e) => addWasteButton(e)}
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                  disabled={formErrors ? "disabled" : ""}
                 >
                   Add Waste
                 </button>
@@ -175,7 +197,7 @@ function Recycle() {
           </div>
         </div>
       </div>
-      <div className="d-flex">
+      <div className="d-flex justify-content-between">
         <h5 className="display-7 text-start p-3 pb-2 ">Recycle</h5>
         <button
           className="rounded btn btn-success"

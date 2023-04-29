@@ -1,38 +1,62 @@
-import Layout from "./Layout";
+import Layout from "../components/Layout";
 import "../styles/auth.scss"
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { GoEarth, isLoading, setTimeoutError, setTimeoutSuccess } from "../utilis";
+import { postReq } from "../Request";
 function Login() {
   const navigate = useNavigate()
   const parentContext = useContext(GoEarth)
   const initialLoginObj = {
-    userName: "",
+    email: "",
     password: ""
   }
   const [loginData, setLoginData] = useState(initialLoginObj)
 
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    const vaildLoginDetails = {
-      userName: "mannevivek21@gmail.com",
-      password: "Vivek@12"
-    }
 
-    if (vaildLoginDetails.userName === loginData.userName && vaildLoginDetails.password === loginData.password) {
-      setTimeoutSuccess(parentContext, "Login successfull")
-      parentContext.setIsLoggedIn(true)
+    // const vaildLoginDetails = {
+    //   email: "mannevivek21@gmail.com",
+    //   password: "Vivek@12"
+    // }
+
+    try {
+      const response = await postReq("http://localhost:8080/reearth/v1/login", loginData)
+      console.log(response, "response.data");
+      // parentContext.setUserDTO({ ...response.data.result })
+      parentContext.setIsLoggedIn(response.data)
+      localStorage.setItem('email', loginData.email);
+      localStorage.setItem('username', loginData.username);
+      parentContext.setShowSuccessMessage(response.data.message)
       parentContext.setIsLoading(true)
       setTimeout(() => {
+        parentContext.setShowSuccessMessage("")
         parentContext.setIsLoading(false)
+
         navigate("/")
       }, 2000);
     }
-    else {
-      setTimeoutError(parentContext, "Invaild username or password")
-      // parentContext.setErrorMessage("Login successfull")
+    catch (err) {
+      console.log(err, "err");
+      parentContext.setErrorMessage(err.response.data.message)
     }
+
+
+
+    // if (vaildLoginDetails.email === loginData.email && vaildLoginDetails.password === loginData.password) {
+    //   setTimeoutSuccess(parentContext, "Login successfull")
+    //   parentContext.setIsLoggedIn(true)
+    //   parentContext.setIsLoading(true)
+    //   setTimeout(() => {
+    //     parentContext.setIsLoading(false)
+    //     navigate("/")
+    //   }, 2000);
+    // }
+    // else {
+    //   setTimeoutError(parentContext, "Invaild email or password")
+    // }
     // const json = {};
     // const form = new FormData(event.target);
     // form.forEach((val, key) => (json[key] = val));
@@ -64,7 +88,7 @@ function Login() {
             </div>
             <p className="text-center my-3 modal-title">GoEarth Login</p>
             <div className="form-group">
-              <input type="text" className="form-control" name="email" placeholder="Username" required="required" value={loginData.userName} onChange={(e) => setLoginData({ ...loginData, userName: e.target.value })} />
+              <input type="text" className="form-control" name="Email" placeholder="Email" required="required" value={loginData.email} onChange={(e) => setLoginData({ ...loginData, email: e.target.value })} />
             </div>
             <div className="form-group">
               <input type="password" className="form-control" name="password" placeholder="Password" required="required" value={loginData.password} onChange={(e) => setLoginData({ ...loginData, password: e.target.value })} />

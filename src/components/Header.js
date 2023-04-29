@@ -4,6 +4,25 @@ import { GoEarth } from "../utilis";
 
 function Header() {
   const parentContext = useContext(GoEarth)
+
+  function handleLogOut(e) {
+    e.preventDefault()
+    const initialUserDTO = {
+
+      username: "vivek",
+      email: "vivek@gmail.com",
+      city: "HYD",
+      firstname: "vivek",
+      lastname: "salla",
+      state: "Telangana",
+      mobilenumber: 9876783342,
+      pincode: "500053",
+      password: "mini1234"
+    }
+    parentContext.setUserDTO({ ...initialUserDTO })
+    parentContext.setIsLoggedIn(false)
+  }
+
   return (
     // <nav className="navbar navbar-expand-lg bg-body-tertiary border-bottom">
     //   <div className="container">
@@ -44,14 +63,14 @@ function Header() {
     // </nav>
 
     <>
-      <section data-bs-version="5.1" class="menu menu1 cid-t9FjKj1aD1" once="menu" id="amenu1-1">
+      <section data-bs-version="5.1" class="menu menu1 earth-perk-nav-bar" once="menu" id="amenu1-1">
         <nav class="navbar navbar-dropdown navbar-expand-lg">
           <div class="container">
             <div class="navbar-brand navbar-brand-main">
 
               <span class="navbar-caption-wrap">
                 <a className="navbar-brand" href="#">
-                  <img src="https://i.ibb.co/pXXNchk/Go-earth-removebg-preview-1-1.png" height={50} />
+                  <img src="https://i.ibb.co/BCWqSrq/Re-Earth-Logo.png" height={50} />
                 </a>
               </span>
             </div>
@@ -67,11 +86,33 @@ function Header() {
               <li class="nav-item"><a class="nav-link link text-white display-4" href="/rewards">
                 Rewards
               </a></li>
-              {parentContext.isLoggedIn ? (
+              {localStorage.getItem('email') ? (
                 <>
-                  <li class="nav-item"><a class="nav-link link text-white display-4" onClick={(e) => { e.preventDefault(); parentContext.setIsLoggedIn(false) }}>
+                  {/* <li class="nav-item">
+                    <a class="nav-link link text-white display-4" onClick={(e) =>  handleLogOut(e) }>
                     Logout
-                  </a></li>
+                  </a></li> */}
+                  <li className="nav-item">
+                    <a className="nav-link link text-white display-4">
+                      <div class="dropdown">
+                        <div
+                          class="dropdown-toggle"
+                          // type="button"
+                          id="dropdownMenuButton"
+                          data-mdb-toggle="dropdown"
+                          aria-expanded="false"
+                        >
+                          Profile
+                        </div>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                          <li><a class="dropdown-item" href="/user-details">User details</a></li>
+                          <li><a class="dropdown-item" href="/reset-password">Reset password</a></li>
+                          <li><a class="dropdown-item" href="#" onClick={(e) => handleLogOut(e)} >Logout</a></li>
+                        </ul>
+                      </div>
+                    </a>
+
+                  </li>
                 </>
               ) :
                 <>

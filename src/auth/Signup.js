@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import Layout from "./Layout";
+import Layout from "../components/Layout";
 import { useContext, useState } from "react";
 import { GoEarth } from "../utilis";
 import { postReq } from "../Request";
@@ -8,10 +8,11 @@ function Signup() {
     const navigate = useNavigate()
     const parentContext = useContext(GoEarth)
     const initialSignUpData = {
-        firstName: "",
-        lastName: "",
+        firstname: "",
+        lastname: "",
+        username: "",
         email: "",
-        mobile: "",
+        mobilenumber: "",
         city: "",
         pincode: "",
         state: "",
@@ -20,9 +21,25 @@ function Signup() {
     }
     const [signupData, setSignupData] = useState(initialSignUpData)
 
-    const handleSignup = (event) => {
+    const handleSignup = async (event) => {
         event.preventDefault();
-        const response = postReq("http://test.com", signupData)
+        // navigate("/login")
+        try {
+            const response = await postReq("http://localhost:8080/reearth/v1/register", signupData)
+            console.log(response.data, "response.data");
+            parentContext.setUserDTO({ ...response.data.result })
+            parentContext.setShowSuccessMessage(response.data.message)
+            parentContext.setIsLoading(true)
+            setTimeout(() => {
+                parentContext.setIsLoading(false)
+                navigate("/login")
+            }, 2000);
+        }
+        catch (err) {
+            console.log(err, "err");
+            parentContext.setErrorMessage(err.response.data.message)
+        }
+
         // var response = authenticateSignUpUser(json);
         // response.then(function (authInfoJSON) {
         //     console.log(authInfoJSON) //console auth-user details
@@ -33,6 +50,7 @@ function Signup() {
         //           setIsLoggedIN(true);
         //         });
         // })
+        // console.log(response.data, "response");
     };
     return (
         //  <Layout>
@@ -44,16 +62,19 @@ function Signup() {
                 </div> */}
                     <p className="text-center my-3 modal-title fw-600">Create a account</p>
                     <div className="form-group">
-                        <input type="text" name="First Name" className="form-control" placeholder="First Name" required="required" value={signupData.firstName} onChange={(e) => setSignupData({ ...signupData, firstName: e.target.value })} />
+                        <input type="text" name="First Name" className="form-control" placeholder="First Name" required="required" value={signupData.firstname} onChange={(e) => setSignupData({ ...signupData, firstname: e.target.value })} />
                     </div>
                     <div className="form-group">
-                        <input type="text" name="Last Name" className="form-control" placeholder="Last Name" required="required" value={signupData.lastName} onChange={(e) => setSignupData({ ...signupData, lastName: e.target.value })} />
+                        <input type="text" name="Last Name" className="form-control" placeholder="Last Name" required="required" value={signupData.lastname} onChange={(e) => setSignupData({ ...signupData, lastname: e.target.value })} />
+                    </div>
+                    <div className="form-group">
+                        <input type="text" name="User Name" className="form-control" placeholder="User Name" required="required" value={signupData.username} onChange={(e) => setSignupData({ ...signupData, username: e.target.value })} />
                     </div>
                     <div className="form-group">
                         <input type="email" name="password" className="form-control" placeholder="Email" required="required" value={signupData.email} onChange={(e) => setSignupData({ ...signupData, email: e.target.value })} />
                     </div>
                     <div className="form-group">
-                        <input type="text" name="Mobile" className="form-control" placeholder="Mobile" required="required" value={signupData.mobile} onChange={(e) => setSignupData({ ...signupData, mobile: e.target.value })} />
+                        <input type="text" name="Mobile" className="form-control" placeholder="Mobile" required="required" value={signupData.mobilenumber} onChange={(e) => setSignupData({ ...signupData, mobilenumber: e.target.value })} />
                     </div>
                     <div className="d-flex">
                         <div className="form-group mx-1">
