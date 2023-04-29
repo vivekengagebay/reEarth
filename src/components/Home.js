@@ -21,14 +21,14 @@ function Home() {
             <div className="row">
               <div className="col-12 col-lg-7">
                 <h1 className="mbr-section-title mbr-fonts-style mb-0 align-center display-2">
-                  Don't throw it away – Give it another life, Recycle!
+                Sustainability is the future.
                 </h1>
                 <p className="mbr-text mbr-fonts-style align-center mt-3 mb-0 display-7">
-                  Join us on this incredible journey of discovery, where every small act of recycling counts towards a brighter future. Together, we can make a real difference - one recycled item at a time!
+                Join us on this incredible journey of discovery, redefining the planet as it once was. Recycle now.
                 </p>
                 <div className="mbr-section-btn align-center mt-3">
                   <a className="btn btn-success display-7" href="https://mobiri.se">
-                    Lear More
+                    Learn More
                   </a>
                 </div>
               </div>
@@ -50,11 +50,11 @@ function Home() {
                     <div className="card-box">
                       <div className="card-title-container">
                         <h5 className="card-title mbr-fonts-style mb-0 display-5">
-                          <strong>Collect waste</strong>
+                          <strong>Why recycle?</strong>
                         </h5>
                       </div>
                       <p className="card-text mbr-fonts-style display-7">
-                        Collect recyclable and compostable materials from your local area, such as plastic bottles, cans, cardboard boxes, food scraps, and yard waste. Properly sort and separate the different types of waste, and designate a specific area for collection.
+                      Planet Earth has been susceptible to pollution due to the unrecycled waste that is being disposed of into the soil, water, and air. It deprives people of life in the future.
                       </p>
                       <div className="mbr-section-btn mt-3">
                         <a
@@ -62,6 +62,7 @@ function Home() {
                           href="https://mobiri.se"
                         >
                           Learn More
+                          
                         </a>
                       </div>
                     </div>
@@ -80,16 +81,14 @@ function Home() {
                                 backgroundColor: "transparent"
                               }}
                             >
-                              <strong>Earn reward points</strong>
+                              <strong>Earn planet coins</strong>
                             </span>
                             <br />
                           </div>
                         </h5>
                       </div>
                       <p className="card-text mbr-fonts-style display-7">
-                        After collecting waste, you can earn reward points through waste management programs, recycling or composting services, community events, and clean-up initiatives.
-                      </p>
-                      <div className="mbr-section-btn mt-3">
+                      After adding your recycled items, you can earn Planet Coins once your recycling is collected. Recycle more to earn x10 times.</p>                      <div className="mbr-section-btn mt-3">
                         <a
                           className="btn btn-success display-7"
                           href="https://mobiri.se"
@@ -105,12 +104,12 @@ function Home() {
                     <div className="card-box">
                       <div className="card-title-container">
                         <h5 className="card-title mbr-fonts-style mb-0 display-5">
-                          <strong>Redeem reward points for gift cards
+                          <strong>What can I shop?
                           </strong>
                         </h5>
                       </div>
                       <p className="card-text mbr-fonts-style display-7">
-                        After earning your reward points, you can redeem your gift cards and encourage your friends to join us in our journey.
+                      Use your Planet Coins to redeem while purchasing eco-friendly products listed on our website, or save them to redeem cash.
                       </p>
                       <div className="mbr-section-btn mt-3">
                         <a

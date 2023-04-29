@@ -62,10 +62,10 @@ function Header() {
                   Home
                 </a></li>
               <li class="nav-item"><a class="nav-link link text-white display-4" href="/add-waste">
-                Add waste
+                recycle
               </a></li>
               <li class="nav-item"><a class="nav-link link text-white display-4" href="/rewards">
-                Rewards
+                rewards
               </a></li>
               {parentContext.isLoggedIn ? (
                 <>
@@ -77,10 +77,10 @@ function Header() {
                 <>
 
                   <li class="nav-item"><a class="nav-link link text-white display-4" href="/login">
-                    Login
+                    login
                   </a></li>
                   <li class="nav-item"><a class="nav-link link text-white display-4" href="/signup">
-                    Signup
+                    signup
                   </a></li>
                 </>}
 

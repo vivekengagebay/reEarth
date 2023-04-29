@@ -12,7 +12,7 @@ function Collection() {
                         <div className="col-12 px-1">
                             <div className="card border-0 mb-3 text-start text-green">
                                 <div className="card-body">
-                                    <p className="display-7">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                    <p className="display-7">Thanks for choosing to recycle. We appreciate your efforts for contributing towards a greener enivronment.</p>
                                 </div>
                             </div>
                         </div>
