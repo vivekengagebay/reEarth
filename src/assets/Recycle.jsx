@@ -45,6 +45,14 @@ function Recycle() {
   ];
 
   const [collectionData, setCollectionData] = useState(initialcollectiondata);
+  const [newWaste, setNewWaste] = useState({
+    id: 98760987,
+    productCategory: "asd",
+    productType: "",
+    quantity: "",
+    weight: "",
+    addToRecylce: false,
+  });
 
   function editCollectionData(value, index, key) {
     const updateCollectionData = collectionData;
@@ -58,18 +66,27 @@ function Recycle() {
     setCollectionData([...updateCollectionData]);
   }
 
-  const emptyWaste = {
-    id: 98760987,
-    productCategory: "",
-    productType: "",
-    quantity: "",
-    weight: "",
-    addToRecylce: false,
-  };
+  // const emptyWaste = {
+  //   id: 98760987,
+  //   productCategory: "",
+  //   productType: "",
+  //   quantity: "",
+  //   weight: "",
+  //   addToRecylce: false,
+  // };
 
   function addWaste(value, key) {
-    const updateCollectionData = emptyWaste;
+    console.log(value, "value", key);
+    const updateCollectionData = newWaste;
     updateCollectionData[key] = value;
+    setNewWaste({ ...updateCollectionData });
+  }
+
+  function addWasteButton(e) {
+    e.preventDefault()
+    const updateCollectionData = collectionData;
+    updateCollectionData.push(newWaste);
+    setCollectionData([...updateCollectionData]);
   }
 
   return (
@@ -95,7 +112,7 @@ function Recycle() {
               ></button>
             </div>
             <div class="modal-body">
-              <form>
+              <form className="text-start">
                 <div className="text-center"></div>
                 <div className="form-group">
                   <label className="form-label">Product category</label>
@@ -103,9 +120,9 @@ function Recycle() {
                     type="text"
                     className="form-control"
                     name="text"
-                    placeholder="Username"
+                    placeholder="Product category"
                     required="required"
-                    value={emptyWaste.productCategory}
+                    value={newWaste.productCategory}
                     onChange={(e) =>
                       addWaste(e.target.value, "productCategory")
                     }
@@ -117,36 +134,42 @@ function Recycle() {
                     type="text"
                     className="form-control"
                     name="text"
-                    placeholder="Username"
+                    placeholder="Product type"
                     required="required"
-                    value={emptyWaste.productType}
+                    value={newWaste.productType}
                     onChange={(e) => addWaste(e.target.value, "productType")}
                   />
                 </div>
                 <div className="form-group">
                   <label className="form-label">Quantity</label>
                   <input
-                    type="text"
+                    type="number"
                     className="form-control"
                     name="text"
-                    placeholder="Username"
+                    placeholder="Quantity"
                     required="required"
-                    value={emptyWaste.quantity}
+                    value={newWaste.quantity}
                     onChange={(e) => addWaste(e.target.value, "quantity")}
                   />
                 </div>
                 <div className="form-group">
-                  <label className="form-label">Weight</label>
+                  <label className="form-label">Weight (in kgs)</label>
                   <input
                     type="text"
                     className="form-control"
                     name="text"
-                    placeholder="Username"
+                    placeholder="Weight (in kgs)"
                     required="required"
-                    value={emptyWaste.weight}
+                    value={newWaste.weight}
                     onChange={(e) => addWaste(e.target.value, "weight")}
                   />
                 </div>
+                <button
+                  className="btn btn-success w-100"
+                  onClick={(e) => addWasteButton(e)}
+                >
+                  Add Waste
+                </button>
               </form>
             </div>
           </div>
