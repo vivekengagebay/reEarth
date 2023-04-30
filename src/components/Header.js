@@ -71,9 +71,9 @@ function Header() {
             <div class="navbar-brand navbar-brand-main">
 
               <span class="navbar-caption-wrap">
-                <a className="navbar-brand" href="#">
+                <a className="navbar-brand d-flex align-items-center " href="/">
                   <img src="https://i.ibb.co/TmKP0pk/earth-parents-wiki-ver-1-removebg-preview.png" height={50} />
-                  <span><strong>Planet perks</strong></span>
+                  <span className="text-uppercase text-white"><strong>Planet perks</strong></span>
                 </a>
               </span>
             </div>
@@ -83,11 +83,11 @@ function Header() {
                 <a class="nav-link link text-white display-4" href="/">
                   Home
                 </a></li>
-              <li class="nav-item"><a class="nav-link link text-white display-4" href="/add-waste">
-                recycle
+              <li class="nav-item"><a class="nav-link link text-white display-4" href="/recycle">
+                Recycle
               </a></li>
               <li class="nav-item"><a class="nav-link link text-white display-4" href="/rewards">
-                rewards
+                Rewards
               </a></li>
               {localStorage.getItem('email') ? (
                 <>
@@ -121,10 +121,10 @@ function Header() {
                 <>
 
                   <li class="nav-item"><a class="nav-link link text-white display-4" href="/login">
-                    login
+                    Login
                   </a></li>
                   <li class="nav-item"><a class="nav-link link text-white display-4" href="/signup">
-                    signup
+                    Signup
                   </a></li>
                 </>}
 

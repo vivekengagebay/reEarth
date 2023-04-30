@@ -3,7 +3,7 @@ import Layout from "./Layout";
 import "../styles/collection.scss"
 import Recycle from "../assets/Recycle";
 import RecycleHistory from "../assets/RecycleHistory";
-import Track from "../assets/Track";
+import Track from "../assets/TrackRecycle";
 function Collection() {
     return (
         // <div>

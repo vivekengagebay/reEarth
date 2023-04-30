@@ -44,7 +44,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
-            <Route path="/add-waste" element={<Collection />} />
+            <Route path="/recycle" element={<Collection />} />
             <Route path="/rewards" element={<Rewards />} />
             <Route path="/user-details" element={<UserDetails />} />
             <Route path="/reset-password" element={<ResetPassword />} />

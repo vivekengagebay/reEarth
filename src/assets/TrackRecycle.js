@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getReq } from "../Request";
 
-function Track() {
+function TrackRecycle() {
     const initialcollectiondata = [
         {
             id: 1234567,
@@ -44,7 +44,7 @@ function Track() {
             addToRecylce: true,
         },
     ];
-    const [collectionData, setCollectionData] = useState();
+    const [collectionData, setCollectionData] = useState(initialcollectiondata);
     async function fetchData() {
         // You can await here
         try {
@@ -74,7 +74,7 @@ function Track() {
         <div>
             <h5 className="display-7 text-start p-3 pb-2 ">Recycle history</h5>
             <div className="table-responsive table-scroll p-3 pt-0">
-                <table class="table mb-0 text-start collection-table">
+                {collectionData.length > 0 ? (<table class="table mb-0 text-start collection-table">
                     <thead className="text-green">
                         <tr className="text-uppercase">
                             <th scope="col">Product category</th>
@@ -85,7 +85,7 @@ function Track() {
                         </tr>
                     </thead>
                     <tbody>
-                        {collectionData && collectionData.map((collectionDetails, index) => {
+                        {collectionData.map((collectionDetails, index) => {
                             return (
                                 <>
                                     <tr style={{ verticalAlign: "middle" }}>
@@ -95,7 +95,7 @@ function Track() {
                                         <td>{collectionDetails.weight}</td>
                                         <td>
                                             <button className="badge rounded-pill btn-success display-7">
-                                                Recycled
+                                               In progress
                                             </button>
                                         </td>
                                     </tr>
@@ -103,10 +103,15 @@ function Track() {
                             );
                         })}
                     </tbody>
-                </table>
+                </table>) : <>
+                <div className="p-3">
+                    Recycle items in progress will appear here.
+                </div>
+                </>}
+               
             </div>
         </div>
      );
 }
 
-export default Track;
+export default TrackRecycle;

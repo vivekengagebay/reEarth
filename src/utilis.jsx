@@ -27,4 +27,12 @@ export const setTimeoutSuccess = function (parentContext, successMessage) {
   }, 5000);
 };
 
+export const handleLogin = function (e,navigate) {
+  
+  if (!localStorage.getItem("email")) {
+    e.preventDefault()
+    navigate("/login");
+  }
+};
+
 export const isLoading = function () {};

@@ -70,36 +70,42 @@ function RecycleHistory() {
     <div>
       <h5 className="display-7 text-start p-3 pb-2 ">Recycle history</h5>
       <div className="table-responsive table-scroll p-3 pt-0">
-        <table class="table mb-0 text-start collection-table">
-          <thead className="text-green">
-            <tr className="text-uppercase">
-              <th scope="col">Product category</th>
-              <th scope="col">Product type</th>
-              <th scope="col">Quantity</th>
-              <th scope="col">Weight</th>
-              <th scope="col"></th>
-            </tr>
-          </thead>
-          <tbody>
-            {collectionData.map((collectionDetails, index) => {
-              return (
-                <>
-                  <tr style={{ verticalAlign: "middle" }}>
-                    <td>{collectionDetails.productCategory}</td>
-                    <td>{collectionDetails.productType}</td>
-                    <td>{collectionDetails.quantity}</td>
-                    <td>{collectionDetails.weight}</td>
-                    <td>
-                      <button className="badge rounded-pill btn-success display-7">
-                        Recycled
-                      </button>
-                    </td>
-                  </tr>
-                </>
-              );
-            })}
-          </tbody>
-        </table>
+        {collectionData.length > 0 ? (
+          <table class="table mb-0 text-start collection-table">
+            <thead className="text-green">
+              <tr className="text-uppercase">
+                <th scope="col">Product category</th>
+                <th scope="col">Product type</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Weight (in Kgs)</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              {collectionData.map((collectionDetails, index) => {
+                return (
+                  <>
+                    <tr style={{ verticalAlign: "middle" }}>
+                      <td>{collectionDetails.productCategory}</td>
+                      <td>{collectionDetails.productType}</td>
+                      <td>{collectionDetails.quantity}</td>
+                      <td>{collectionDetails.weight}</td>
+                      <td>
+                        <button className="badge rounded-pill btn-success display-7">
+                          Recycled
+                        </button>
+                      </td>
+                    </tr>
+                  </>
+                );
+              })}
+            </tbody>
+          </table>
+        ) : (
+          <>
+            <div className="p-3 fw-bold">Recycled items will appear here.</div>
+          </>
+        )}
       </div>
     </div>
   );

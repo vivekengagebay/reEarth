@@ -27,7 +27,7 @@ function Home() {
                 Join us on this incredible journey of discovery, redefining the planet as it once was.
                 </p>
                 <div className="mbr-section-btn align-center mt-3">
-                  <a className="btn btn-success display-7" href="/add-waste">
+                  <a className="btn btn-success display-7" href="/recycle">
                     Recycle now
                   </a>
                 </div>
@@ -59,7 +59,7 @@ function Home() {
                       <div className="mbr-section-btn mt-3">
                         <a
                           className="btn btn-success display-7"
-                          href="/add-waste"
+                          href="/recycle"
                         >
                           Contribute
                           
@@ -91,7 +91,7 @@ function Home() {
                       After adding your recycled items, you can earn Planet Coins once your recycling is collected. Recycle more to earn x10 times.</p>                      <div className="mbr-section-btn mt-3">
                         <a
                           className="btn btn-success display-7"
-                          href="/add-waste"
+                          href="/recycle"
                         >
                           Use coins
                         </a>

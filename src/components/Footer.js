@@ -5,7 +5,7 @@ function Footer() {
         <div>
             <footer className="text-center text-lg-start bg-white text-muted">
 
-                <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom border-top">
+                {/* <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom border-top">
 
                     
                     <div>
@@ -28,15 +28,14 @@ function Footer() {
                             <i className="fab fa-github"></i>
                         </a>
                     </div>
-                </section>
+                </section> */}
                 <section className="">
                     <div className="container text-center text-md-start mt-5">
 
                         <div className="row mt-3">
                             <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
 
-                                <h6 className="text-uppercase fw-bold mb-4">
-                                    <i className="fas fa-gem me-3 text-secondary"></i>Plasticperks
+                                <h6 className="text-uppercase fw-bold mb-4">Plasticperks
                                 </h6>
                                 <p> Made with ♥️ in India.
                                 </p>
@@ -44,10 +43,10 @@ function Footer() {
                             <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4 ">
 
                                 <h6 className="text-uppercase fw-bold mb-4">
-                                restore earth
-                                   
+                                    restore earth
+
                                 </h6>
-                                
+
                                 <p>
                                     <a href="/planetcare" className="text-reset text-decoration-none">Care for planet</a>
                                 </p>
@@ -70,7 +69,7 @@ function Footer() {
                                     <a href="/" className="text-reset text-decoration-none">Home</a>
                                 </p>
                                 <p>
-                                    <a href="/add-waste" className="text-reset text-decoration-none">Start recycle</a>
+                                    <a href="/recycle" className="text-reset text-decoration-none">Start recycle</a>
                                 </p>
                                 <p>
                                     <a href="/rewards" className="text-reset text-decoration-none">Rewards</a>

@@ -155,8 +155,8 @@ body {
 }
 .btn-primary,
 .btn-primary:active {
-  background-color: #75083a !important;
-  border-color: #75083a !important;
+  background-color: #198754 !important;
+  border-color: #198754 !important;
   color: #ffffff !important;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
 }
@@ -1004,8 +1004,8 @@ b {
 }
 .earth-perk-nav-bar .dropdown-item:hover,
 .earth-perk-nav-bar .dropdown-item:focus {
-  background: #75083a !important;
-  color: inherit !important;
+  background: #198754 !important;
+  color: #fff !important;
 }
 .earth-perk-nav-bar .dropdown-item:hover span {
   color: white;
@@ -1082,7 +1082,7 @@ b {
 }
 
 .earth-perk-nav-bar .navbar {
-  min-height: 112px;
+  min-height: 80px;
   transition: all 0.3s;
   border-bottom: none !important;
   background: #6ac88a;
@@ -2596,6 +2596,6 @@ b {
 }
 
 .dropdown-toggle::after{
-  vertical-align: middle;
-  margin-left: 0.5rem;
+  vertical-align: middle !important;
+  margin-left: 0.5rem !important;
 }
