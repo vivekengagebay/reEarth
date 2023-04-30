@@ -21,14 +21,14 @@ function Home() {
             <div className="row">
               <div className="col-12 col-lg-7">
                 <h1 className="mbr-section-title mbr-fonts-style mb-0 align-center display-2">
-                  Don't throw it away – Give it another life, Recycle!
+                Sustainability is the future.
                 </h1>
                 <p className="mbr-text mbr-fonts-style align-center mt-3 mb-0 display-7">
-                  Join us on this incredible journey of discovery, where every small act of recycling counts towards a brighter future. Together, we can make a real difference - one recycled item at a time!
+                Join us on this incredible journey of discovery, redefining the planet as it once was.
                 </p>
                 <div className="mbr-section-btn align-center mt-3">
-                  <a className="btn btn-success display-7" href="https://mobiri.se">
-                    Lear More
+                  <a className="btn btn-success display-7" href="/add-waste">
+                    Recycle now
                   </a>
                 </div>
               </div>
@@ -50,18 +50,19 @@ function Home() {
                     <div className="card-box">
                       <div className="card-title-container">
                         <h5 className="card-title mbr-fonts-style mb-0 display-5">
-                          <strong>Collect waste</strong>
+                          <strong>Why recycle?</strong>
                         </h5>
                       </div>
                       <p className="card-text mbr-fonts-style display-7">
-                        Collect recyclable and compostable materials from your local area, such as plastic bottles, cans, cardboard boxes, food scraps, and yard waste. Properly sort and separate the different types of waste, and designate a specific area for collection.
+                      Planet Earth has been susceptible to pollution due to the unrecycled waste that is being disposed of into the soil, water, and air. It deprives people of life in the future.
                       </p>
                       <div className="mbr-section-btn mt-3">
                         <a
                           className="btn btn-success display-7"
-                          href="https://mobiri.se"
+                          href="/add-waste"
                         >
-                          Learn More
+                          Contribute
+                          
                         </a>
                       </div>
                     </div>
@@ -80,21 +81,19 @@ function Home() {
                                 backgroundColor: "transparent"
                               }}
                             >
-                              <strong>Earn reward points</strong>
+                              <strong>Earn planet coins</strong>
                             </span>
                             <br />
                           </div>
                         </h5>
                       </div>
                       <p className="card-text mbr-fonts-style display-7">
-                        After collecting waste, you can earn reward points through waste management programs, recycling or composting services, community events, and clean-up initiatives.
-                      </p>
-                      <div className="mbr-section-btn mt-3">
+                      After adding your recycled items, you can earn Planet Coins once your recycling is collected. Recycle more to earn x10 times.</p>                      <div className="mbr-section-btn mt-3">
                         <a
                           className="btn btn-success display-7"
-                          href="https://mobiri.se"
+                          href="/add-waste"
                         >
-                          Learn More
+                          Use coins
                         </a>
                       </div>
                     </div>
@@ -105,19 +104,19 @@ function Home() {
                     <div className="card-box">
                       <div className="card-title-container">
                         <h5 className="card-title mbr-fonts-style mb-0 display-5">
-                          <strong>Redeem reward points for gift cards
+                          <strong>What can I shop?
                           </strong>
                         </h5>
                       </div>
                       <p className="card-text mbr-fonts-style display-7">
-                        After earning your reward points, you can redeem your gift cards and encourage your friends to join us in our journey.
+                      Use your Planet Coins to redeem while purchasing eco-friendly products listed on our website, or save them to redeem cash.
                       </p>
                       <div className="mbr-section-btn mt-3">
                         <a
                           className="btn btn-success display-7"
-                          href="https://mobiri.se"
+                          href="/shop"
                         >
-                          Learn More
+                          Shop now
                         </a>
                       </div>
                     </div>
@@ -140,12 +139,12 @@ function Home() {
                     <div className="card-box">
                       <h4 className="card-title mbr-fonts-style display-2">
                         <strong>
-                          Join the recycling revolution and become a hero for the planet!
+                        Join the recycling revolution and be a planet superhero!♻️
 
                         </strong>
                       </h4>
                       <p className="mbr-text mbr-fonts-style display-7">
-                        Start making a difference today by recycling your waste and reducing your environmental footprint. Together, we can create a sustainable future for generations to come. Take action now and join the movement!
+                        Start making a difference today by recycling your waste and reducing carbon footprint. Together, we can create a sustainable future for generations to come. The world awaits your action!
                       </p>
                     </div>
                   </div>
@@ -153,7 +152,7 @@ function Home() {
                 <div className="col-img">
                   <div className="image-wrapper">
                     <img
-                      src="https://mobirise.com/extensions/cookm5/healthy-food-recipes/assets/images/pexels-anastasia-shuraeva-4122912-729x675.jpg"
+                      src="https://sphotoss.s3.us-east-2.amazonaws.com/treeearth.jpeg"
                       alt="Mobirise Website Builder"
                     />
                   </div>
@@ -164,7 +163,7 @@ function Home() {
         </section>
         <section
 
-          className="video1 cid-t9Fl2TMQd3 mbr-parallax-background"
+          className="video1 cid-t9Fl2TMQd3 mbr-parallax-background d-none"
           id="avideo1-6"
         >
           <div
@@ -180,7 +179,7 @@ function Home() {
                     data-modal=".modalWindow"
                   >
                     <img
-                      src="https://mobirise.com/extensions/cookm5/healthy-food-recipes/assets/images/pexels-mikhail-nilov-8307646-1920x1280.jpg"
+                      src="https://sphotoss.s3.us-east-2.amazonaws.com/refuse-reduce.gif"
                       alt="Mobirise"
                     />
                     <div className="icon-wrap">
@@ -414,11 +413,10 @@ function Home() {
             <div className="row">
               <div className="col-12 col-title">
                 <h3 className="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
-                  <strong>Health Seminar Schedule</strong>
+                  <strong>Recycle for a better tomorrow</strong>
                 </h3>
                 <h5 className="mbr-section-subtitle mbr-fonts-style align-center mb-0 display-7">
-                  Healthy Living Events
-                </h5>
+                Benefits of recycling</h5>
               </div>
             </div>
             <div className="row card-row">
@@ -430,8 +428,7 @@ function Home() {
                         <strong>Environmental Benefits</strong>
                       </h5>
                       <p className="card-text mbr-fonts-style display-7">
-                        Recycling has numerous environmental benefits that help to preserve natural resources and reduce pollution. By recycling materials such as paper, plastic, glass, and metals, we can reduce the amount of waste sent to landfills and conserve valuable resources such as trees, water, and oil.
-                      </p>
+                      Numerous environmental advantages of recycling contribute to the preservation of natural resources and the lowering of carbon footprints. We can cut down on the quantity of waste that is dumped in landfills and preserve precious resources by recycling materials like paper, plastic, glass, and metals.</p>
                       {/* <p className="card-name mbr-fonts-style display-5">
                         <strong>22 May</strong>
                       </p> */}
@@ -445,8 +442,7 @@ function Home() {
                         <strong>Economic Benefits</strong>
                       </h5>
                       <p className="card-text mbr-fonts-style display-7">
-                        Recycling has numerous environmental benefits that help to preserve natural resources and reduce pollution. By recycling materials such as paper, plastic, glass, and metals, we can reduce the amount of waste sent to landfills and conserve valuable resources such as trees, water, and oil.
-                      </p>
+                      Recycling can provide significant economic benefits, such as job creation, cost savings, revenue generation, energy savings, and reduced environmental cleanup costs. It can help to boost local economies, reduce waste management costs, and create new employment opportunities.</p>
                       {/* <p className="card-name mbr-fonts-style display-5">
                         <strong>24 May</strong>
                       </p> */}
@@ -460,9 +456,7 @@ function Home() {
                         <strong>Social Benefits</strong>
                       </h5>
                       <p className="card-text mbr-fonts-style display-7">
-                        Recycling promotes community involvement and civic engagement, bringing people together to work towards a common goal. Recycling also helps to reduce litter and improve the appearance of neighborhoods and public spaces, contributing to a sense of pride and community well-being.
-                      </p>
-                      {/* <p className="card-name mbr-fonts-style display-5">
+                      By bringing individuals together to work towards a common objective, recycling fosters civic engagement and community involvement. Recycling also aids in litter reduction and enhances the aesthetics of neighbourhoods and public areas, fostering a sense of community pride.</p>                      {/* <p className="card-name mbr-fonts-style display-5">
                         <strong>10 June</strong>
                       </p> */}
                     </div>
@@ -495,16 +489,12 @@ function Home() {
                   <div className="card-wrapper">
                     <div className="card-box">
                       <p className="mbr-text mbr-fonts-style display-5">
-                        Neque vitae tempus quam pellentesque nec nam aliquam sem et.
-                        Morbi tempus iaculis urna id volutpat. Non arcu risus quis
-                        varius.
+                      "We do not inherit the earth from our ancestors, 
+                      we borrow it from our children."
                       </p>
                       <h4 className="card-title mbr-fonts-style display-4">
-                        <strong>Aruna Malis</strong>
+                        <strong>Native American Proverb</strong>
                       </h4>
-                      <h5 className="card-subtitle mbr-fonts-style display-7">
-                        Designer
-                      </h5>
                     </div>
                   </div>
                 </div>
@@ -535,15 +525,14 @@ function Home() {
                   <div className="card-wrapper">
                     <div className="card-box">
                       <p className="mbr-text mbr-fonts-style display-5">
-                        Neque vitae tempus quam pellentesque nec nam aliquam sem et.
-                        Morbi tempus iaculis urna id volutpat. Non arcu risus quis
-                        varius.
+                      "There is no such thing as 'away'. When we throw anything away, 
+                      it must go somewhere."
                       </p>
                       <h4 className="card-title mbr-fonts-style display-4">
-                        <strong>Pritula Juli</strong>
+                        <strong>Annie Leonard</strong>
                       </h4>
                       <h5 className="card-subtitle mbr-fonts-style display-7">
-                        Nutritionist
+                      American proponent
                       </h5>
                     </div>
                   </div>
@@ -565,8 +554,7 @@ function Home() {
                     <div className="iconfont-wrapper">
                       <span className="mbr-iconfont mobi-mbri-quote-left mobi-mbri" />
                     </div>
-                    <img
-                      src="https://mobirise.com/extensions/cookm5/healthy-food-recipes/assets/images/pexels-pixabay-415829-500x488.jpg"
+                    <img src="https://sphotoss.s3.us-east-2.amazonaws.com/licensed-image.jpeg"
                       alt="Mobirise Website Builder"
                     />
                   </div>
@@ -575,15 +563,13 @@ function Home() {
                   <div className="card-wrapper">
                     <div className="card-box">
                       <p className="mbr-text mbr-fonts-style display-5">
-                        Neque vitae tempus quam pellentesque nec nam aliquam sem et.
-                        Morbi tempus iaculis urna id volutpat. Non arcu risus quis
-                        varius.
+                      The greatest threat to our planet is the belief that someone else will save it."
                       </p>
                       <h4 className="card-title mbr-fonts-style display-4">
-                        <strong>Selina Williams</strong>
+                        <strong>Robert Swan</strong>
                       </h4>
                       <h5 className="card-subtitle mbr-fonts-style display-7">
-                        Artist
+                      Author
                       </h5>
                     </div>
                   </div>

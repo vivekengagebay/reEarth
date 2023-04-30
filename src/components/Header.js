@@ -72,7 +72,8 @@ function Header() {
 
               <span class="navbar-caption-wrap">
                 <a className="navbar-brand" href="#">
-                  <img src="https://i.ibb.co/BCWqSrq/Re-Earth-Logo.png" height={50} />
+                  <img src="https://i.ibb.co/TmKP0pk/earth-parents-wiki-ver-1-removebg-preview.png" height={50} />
+                  <span><strong>Planet perks</strong></span>
                 </a>
               </span>
             </div>
@@ -83,10 +84,10 @@ function Header() {
                   Home
                 </a></li>
               <li class="nav-item"><a class="nav-link link text-white display-4" href="/add-waste">
-                Add waste
+                recycle
               </a></li>
               <li class="nav-item"><a class="nav-link link text-white display-4" href="/rewards">
-                Rewards
+                rewards
               </a></li>
               {localStorage.getItem('email') ? (
                 <>
@@ -120,10 +121,10 @@ function Header() {
                 <>
 
                   <li class="nav-item"><a class="nav-link link text-white display-4" href="/login">
-                    Login
+                    login
                   </a></li>
                   <li class="nav-item"><a class="nav-link link text-white display-4" href="/signup">
-                    Signup
+                    signup
                   </a></li>
                 </>}
 

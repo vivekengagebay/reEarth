@@ -13,6 +13,11 @@ import Contactus from './components/Contactus';
 import UserDetails from './auth/EditUserDetails';
 import ResetPassword from './auth/ResetPassword';
 import Shop from './assets/Shop';
+import AboutUs from './info/AboutUs';
+import CareForPlanet from './info/CareForPlanet';
+import Planttrees from './info/Planttrees';
+import Savesoil from './info/Savesoil';
+import Endpollution from './info/Endpollution';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -44,6 +49,15 @@ function App() {
             <Route path="/user-details" element={<UserDetails />} />
             <Route path="/reset-password" element={<ResetPassword />} />
             <Route path="/shop" element={<Shop />} />
+
+            <Route path="/about-us" element={<AboutUs />} />
+
+            <Route path="/planetcare" element={<CareForPlanet />} />
+            <Route path="/planttrees" element={<Planttrees />} />
+            <Route path="/savesoil" element={<Savesoil />} />
+            <Route path="/pollutionfree" element={<Endpollution />} />
+
+
 
 
           </Routes>
