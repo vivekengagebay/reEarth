@@ -12,6 +12,9 @@ import { GoEarth } from './utilis';
 import Contactus from './components/Contactus';
 import AboutUs from './info/AboutUs';
 import CareForPlanet from './info/CareForPlanet';
+import Planttrees from './info/Planttrees';
+import Savesoil from './info/Savesoil';
+import Endpollution from './info/Endpollution';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -47,7 +50,13 @@ function App() {
 
             <Route path="/about-us" element={<AboutUs />} />
 
-            <Route path="/care-for-planet" element={<CareForPlanet />} />
+            <Route path="/planetcare" element={<CareForPlanet />} />
+            <Route path="/planttrees" element={<Planttrees />} />
+            <Route path="/savesoil" element={<Savesoil />} />
+            <Route path="/pollutionfree" element={<Endpollution />} />
+
+
+
 
           </Routes>
         </Router>

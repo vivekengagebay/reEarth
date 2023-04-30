@@ -51,7 +51,8 @@ function Header() {
 
               <span class="navbar-caption-wrap">
                 <a className="navbar-brand" href="#">
-                  <img src="https://i.ibb.co/pXXNchk/Go-earth-removebg-preview-1-1.png" height={50} />
+                  <img src="https://i.ibb.co/TmKP0pk/earth-parents-wiki-ver-1-removebg-preview.png" height={50} />
+                  <span><strong>Planet perks</strong></span>
                 </a>
               </span>
             </div>
