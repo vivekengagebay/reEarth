@@ -1,19 +1,15 @@
 import axios from "axios";
 
 
-export const getReq = async (url, data) => {
-
-    let json = { params: data }
-
-
-    return await axios.get(url, json);
+export const getReq = async (url) => {
+    return await axios.get(url);
 }
 
 export const postReq = async (url, data) => {
     return await axios.post(`${url}`, data)
 }
 
-export const putReg = async(url, data) => {
+export const putReq = async(url, data) => {
     return await axios.put(`${url}`, data)
 }
 

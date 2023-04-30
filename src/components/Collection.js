@@ -3,6 +3,7 @@ import Layout from "./Layout";
 import "../styles/collection.scss"
 import Recycle from "../assets/Recycle";
 import RecycleHistory from "../assets/RecycleHistory";
+import Track from "../assets/Track";
 function Collection() {
     return (
         // <div>
@@ -48,7 +49,7 @@ function Collection() {
                                         <RecycleHistory />
                                     </div>
                                     <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
-                                        track
+                                        <Track />
                                     </div>
                                 </div>
                             </div>

@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { getReq } from "../Request";
 
 function RecycleHistory() {
   const initialcollectiondata = [
@@ -43,6 +44,26 @@ function RecycleHistory() {
       addToRecylce: true,
     },
   ];
+  async function fetchData() {
+    // You can await here
+    try {
+      const response = await getReq(
+        `http://localhost:8081/reearth/v1/getRecycleData?status=inprogress`
+      );
+      console.log(response, "response");
+      const addCountry = response.data.result;
+      // addCountry["country"] = "india";
+      setCollectionData([...addCountry]);
+    } catch (err) {
+      console.log(err, "err");
+    }
+
+    // ...
+  }
+
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   const [collectionData, setCollectionData] = useState(initialcollectiondata);
   return (

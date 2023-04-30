@@ -12,6 +12,7 @@ import { GoEarth } from './utilis';
 import Contactus from './components/Contactus';
 import UserDetails from './auth/EditUserDetails';
 import ResetPassword from './auth/ResetPassword';
+import Shop from './assets/Shop';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -42,6 +43,7 @@ function App() {
             <Route path="/rewards" element={<Rewards />} />
             <Route path="/user-details" element={<UserDetails />} />
             <Route path="/reset-password" element={<ResetPassword />} />
+            <Route path="/shop" element={<Shop />} />
 
 
           </Routes>

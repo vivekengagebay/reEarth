@@ -3,7 +3,7 @@ import "../styles/auth.scss"
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { GoEarth, isLoading, setTimeoutError, setTimeoutSuccess } from "../utilis";
-import { postReq } from "../Request";
+import { getReq, postReq } from "../Request";
 function Login() {
   const navigate = useNavigate()
   const parentContext = useContext(GoEarth)
@@ -21,14 +21,23 @@ function Login() {
     //   email: "mannevivek21@gmail.com",
     //   password: "Vivek@12"
     // }
-
+let username 
     try {
       const response = await postReq("http://localhost:8080/reearth/v1/login", loginData)
       console.log(response, "response.data");
-      // parentContext.setUserDTO({ ...response.data.result })
+      try {
+        const userDataRes = await getReq(
+          `http://localhost:8080/reearth/v1/getUserDetails?emailid=${loginData.email}`
+        );
+        username = userDataRes.data.result.username
+        // addCountry["country"] = "india";
+        // setUpdateData({ ...addCountry });
+      } catch (err) {
+        console.log(err, "err");
+      }
       parentContext.setIsLoggedIn(response.data)
       localStorage.setItem('email', loginData.email);
-      localStorage.setItem('username', loginData.username);
+      localStorage.setItem('username', username);
       parentContext.setShowSuccessMessage(response.data.message)
       parentContext.setIsLoading(true)
       setTimeout(() => {
@@ -76,6 +85,8 @@ function Login() {
     //       });
     //   })
   };
+
+  console.log(loginData, "loginData");
   return (
     <div className="auth-container d-flex vh-100 align-items-center justifyc-content-center">
       {/* <Layout> */}

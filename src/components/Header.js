@@ -9,16 +9,18 @@ function Header() {
     e.preventDefault()
     const initialUserDTO = {
 
-      username: "vivek",
-      email: "vivek@gmail.com",
-      city: "HYD",
-      firstname: "vivek",
-      lastname: "salla",
-      state: "Telangana",
-      mobilenumber: 9876783342,
-      pincode: "500053",
-      password: "mini1234"
+      username: "",
+      email: "",
+      city: "",
+      firstname: "",
+      lastname: "",
+      state: "",
+      mobilenumber: 0,
+      pincode: "",
+      password: ""
     }
+    localStorage.removeItem('email');
+    localStorage.removeItem('username');
     parentContext.setUserDTO({ ...initialUserDTO })
     parentContext.setIsLoggedIn(false)
   }
@@ -106,7 +108,7 @@ function Header() {
                         </div>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                           <li><a class="dropdown-item" href="/user-details">User details</a></li>
-                          <li><a class="dropdown-item" href="/reset-password">Reset password</a></li>
+                          <li><a class="dropdown-item d-none" href="/reset-password">Reset password</a></li>
                           <li><a class="dropdown-item" href="#" onClick={(e) => handleLogOut(e)} >Logout</a></li>
                         </ul>
                       </div>

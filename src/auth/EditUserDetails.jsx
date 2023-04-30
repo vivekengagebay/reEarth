@@ -1,11 +1,13 @@
-import { Navigate } from "react-router-dom";
-import { postReq, putReg } from "../Request";
+// import { Navigate } from "react-router-dom";
+import { getReq, putReq } from "../Request";
 import { useContext, useEffect, useState } from "react";
 import { GoEarth } from "../utilis";
+import { useNavigate } from "react-router-dom";
 
 function EditUserDetails() {
   const parentContext = useContext(GoEarth);
-  const initialSignUpData = {
+  const navigate = useNavigate()
+  const initialupdateData = {
     firstname: "",
     lastname: "",
     username: "",
@@ -17,19 +19,36 @@ function EditUserDetails() {
     country: "",
     password: "",
   };
-  const [signupData, setSignupData] = useState(initialSignUpData);
+  const [updateData, setUpdateData] = useState(initialupdateData);
+  async function fetchData() {
+    // You can await here
+    try {
+      const response = await getReq(
+        `http://localhost:8080/reearth/v1/getUserDetails?emailid=${localStorage.getItem(
+          "email"
+        )}`
+      );
+      console.log(response, "response");
+      const addCountry = response.data.result;
+      addCountry["country"] = "india";
+      setUpdateData({ ...addCountry });
+    } catch (err) {
+      console.log(err, "err");
+    }
+
+    // ...
+  }
 
   useEffect(() => {
-const response = 
-    setSignupData({ ...parentContext.userDTO });
+    fetchData();
   }, []);
 
   const handleSignup = async (event) => {
     event.preventDefault();
     try {
-      const response = await putReg(
+      const response = await putReq(
         "http://localhost:8080/reearth/v1/update",
-        signupData
+        updateData
       );
       console.log(response.data, "response.data");
       parentContext.setUserDTO({ ...response.data.result });
@@ -38,18 +57,18 @@ const response =
       setTimeout(() => {
         parentContext.setIsLoading(false);
         parentContext.setShowSuccessMessage("");
-        Navigate("/");
+        navigate("/");
       }, 2000);
     } catch (err) {
       console.log(err, "err");
       parentContext.setErrorMessage(err.response.data.message);
-       setTimeout(() => {
-         parentContext.setErrorMessage(err.response.data.message);
-       }, 2000);
+      setTimeout(() => {
+        parentContext.setErrorMessage(err.response.data.message);
+      }, 2000);
     }
   };
 
-  console.log(parentContext.userDTO, "signupData");
+  console.log(parentContext.userDTO, "updateData");
   return (
     <div className="auth-container d-flex vh-100 align-items-center">
       <div className="login-form">
@@ -67,9 +86,9 @@ const response =
               className="form-control"
               placeholder="First Name"
               required="required"
-              value={signupData.firstname}
+              value={updateData.firstname}
               onChange={(e) =>
-                setSignupData({ ...signupData, firstname: e.target.value })
+                setUpdateData({ ...updateData, firstname: e.target.value })
               }
             />
           </div>
@@ -80,9 +99,9 @@ const response =
               className="form-control"
               placeholder="Last Name"
               required="required"
-              value={signupData.lastname}
+              value={updateData.lastname}
               onChange={(e) =>
-                setSignupData({ ...signupData, lastname: e.target.value })
+                setUpdateData({ ...updateData, lastname: e.target.value })
               }
             />
           </div>
@@ -92,10 +111,11 @@ const response =
               name="User Name"
               className="form-control"
               placeholder="User Name"
+              disabled
               required="required"
-              value={signupData.username}
+              value={updateData.username}
               onChange={(e) =>
-                setSignupData({ ...signupData, username: e.target.value })
+                setUpdateData({ ...updateData, username: e.target.value })
               }
             />
           </div>
@@ -106,9 +126,10 @@ const response =
               className="form-control"
               placeholder="Email"
               required="required"
-              value={signupData.email}
+              disabled
+              value={updateData.email}
               onChange={(e) =>
-                setSignupData({ ...signupData, email: e.target.value })
+                setUpdateData({ ...updateData, email: e.target.value })
               }
             />
           </div>
@@ -119,9 +140,9 @@ const response =
               className="form-control"
               placeholder="Mobile"
               required="required"
-              value={signupData.mobilenumber}
+              value={updateData.mobilenumber}
               onChange={(e) =>
-                setSignupData({ ...signupData, mobilenumber: e.target.value })
+                setUpdateData({ ...updateData, mobilenumber: e.target.value })
               }
             />
           </div>
@@ -133,9 +154,9 @@ const response =
                 className="form-control"
                 placeholder="City"
                 required="required"
-                value={signupData.city}
+                value={updateData.city}
                 onChange={(e) =>
-                  setSignupData({ ...signupData, city: e.target.value })
+                  setUpdateData({ ...updateData, city: e.target.value })
                 }
               />
             </div>
@@ -146,9 +167,9 @@ const response =
                 className="form-control"
                 placeholder="Pincode"
                 required="required"
-                value={signupData.pincode}
+                value={updateData.pincode}
                 onChange={(e) =>
-                  setSignupData({ ...signupData, pincode: e.target.value })
+                  setUpdateData({ ...updateData, pincode: e.target.value })
                 }
               />
             </div>
@@ -161,9 +182,9 @@ const response =
                 className="form-control"
                 placeholder="State"
                 required="required"
-                value={signupData.state}
+                value={updateData.state}
                 onChange={(e) =>
-                  setSignupData({ ...signupData, state: e.target.value })
+                  setUpdateData({ ...updateData, state: e.target.value })
                 }
               />
             </div>
@@ -174,41 +195,21 @@ const response =
                 className="form-control"
                 placeholder="Country"
                 required="required"
-                value={signupData.country}
+                value={updateData.country}
                 onChange={(e) =>
-                  setSignupData({ ...signupData, country: e.target.value })
+                  setUpdateData({ ...updateData, country: e.target.value })
                 }
               />
             </div>
-          </div>
-
-          <div className="form-group">
-            <input
-              type="password"
-              name="state"
-              className="form-control"
-              placeholder="Password"
-              required="required"
-              value={signupData.password}
-              onChange={(e) =>
-                setSignupData({ ...signupData, password: e.target.value })
-              }
-            />
           </div>
 
           <button
             type="submit"
             className="w-100 btn btn-primary btn-block btn-lg"
           >
-            SIGN UP
+            Update data
           </button>
         </form>
-        <div className="text-center small mt-2">
-          Already have accounts?{" "}
-          <a href="/login" className="text-decoration-none fw-bold">
-            Login
-          </a>
-        </div>
       </div>
     </div>
   );

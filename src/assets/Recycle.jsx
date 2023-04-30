@@ -1,5 +1,6 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { GoEarth } from "../utilis";
+import { getReq } from "../Request";
 
 function Recycle() {
   const initialcollectiondata = [
@@ -55,6 +56,31 @@ function Recycle() {
     addToRecylce: false,
   });
   const [formErrors, setFormErrors] = useState(true);
+
+
+  async function fetchData() {
+    // You can await here
+    try {
+      const response = await getReq(
+        `http://localhost:8081/reearth/v1/getRecycleData?status=requested`
+      );
+      console.log(response, "response");
+      if(!response.data) {
+        return;
+      }
+      const addCountry = response.data.result;
+      // addCountry["country"] = "india";
+      setCollectionData( [...addCountry ]);
+    } catch (err) {
+      console.log(err, "err");
+    }
+
+    // ...
+  }
+
+  useEffect(() => {
+fetchData()
+  },[])
 
   function editCollectionData(value, index, key) {
     const updateCollectionData = collectionData;

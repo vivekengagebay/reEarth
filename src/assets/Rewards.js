@@ -1,13 +1,45 @@
 import "../styles/Rewards.scss"
 import Layout from "../components/Layout";
+import { useEffect, useState } from "react";
+import { getReq } from "../Request";
+
 function Rewards() {
+    const [rewardsDetails, setRewardsDetails] = useState({})
+    async function fetchData() {
+
+
+        // You can await here
+        try {
+            const response = await getReq(
+                `http://localhost:8082/reearth/v1/getWalletData?username=${localStorage.getItem(
+                    "username"
+                )}`
+            );
+            console.log(response, "response");
+            // const addCountry = response.data.result;
+
+            setRewardsDetails({ ...response.data.result });
+        } catch (err) {
+            console.log(err, "err");
+        }
+
+        // ...
+    }
+
+    useEffect(() => {
+        fetchData()
+    }, [])
+
     return (
         <Layout>
             <div className="collection-page-container ">
                 <div className="container p-3">
                     <div className="row">
-                        <div className="col-12 text-start">
+                        <div className="col-6 text-start">
                             <h6 className="display-5 text-green">Earnings</h6>
+                        </div>
+                        <div className="col-6 text-end">
+                            <button className="btn-green btn"><a href="/shop"></a>Shop</button>
                         </div>
                         <div className="col-12 px-1">
                             <div className="card border-0 mb-3 text-start text-green p-3 total-earning-points">
@@ -28,7 +60,7 @@ function Rewards() {
                                         </div>
                                         <div className="earning-wallet-container ms-4">
                                             <h4 className="my-wallet mb-0">Total planet coins earned</h4>
-                                            <h2 className="display-2 fw-bold mb-0">50,000<span className="display-7"></span></h2>
+                                            <h2 className="display-2 fw-bold mb-0">{rewardsDetails.totalcoins}<span className="display-7"></span></h2>
                                         </div>
                                     </div>
                                 </div>
@@ -304,7 +336,7 @@ function Rewards() {
                                         </tbody>
                                     </table>
                                 </div>
-                               
+
                             </div>
 
                         </div>
