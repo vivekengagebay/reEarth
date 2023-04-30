@@ -25,7 +25,7 @@ function Rewards() {
             console.log(response, "response");
             // const addCountry = response.data.result;
 
-            setRewardsDetails({ ...response.data.result });
+            setRewardsDetails({ ...response.data });
         } catch (err) {
             console.log(err, "err");
         }
