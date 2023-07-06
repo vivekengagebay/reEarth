@@ -1,0 +1,97 @@
+.collection-page-container{
+  .card{
+    // border-radius: 0.42rem;
+  }
+ background-color: #ebfaf0;
+    
+    .nav-pills .nav-link{
+        color: #198754;
+    }
+    .nav-pills .nav-link.active{
+        background-color: #198754;
+        color: #fff;
+    }
+    .nav-pills{
+        width: 100%;
+    }
+}
+
+.collection-table{
+    .badge{
+        border: none;
+        box-shadow: none;
+        padding: 8px 14px;
+    }
+}
+
+.total-earning-points{
+    // background-image: ;
+    border-radius: 30px;
+    background-image: url("https://i.ibb.co/j4wzGdp/pop-up-banner-01-1.png");
+    background-size: contain;
+}
+
+
+.my-planet-coins{
+position: relative;
+overflow: hidden;
+border-radius: 30px;
+.earning-icon-container{
+    background-color: #F2921D !important;
+    
+}
+.earning-wallet-container{
+h4 , h2{
+        color: #F2921D !important;
+    }
+    button{
+        background-color:#F2921D !important ;
+        border: #F2921D !important;
+    }
+}
+.shape-rounded-circle {
+    transform: translate3d(0px, 26px, 0px);
+    position: absolute;
+    bottom: -1rem;
+    right: -1rem;
+    background-image: repeating-linear-gradient(-55deg, rgba(255, 255, 255, 0) 0.8px, #F2921D 1.6px, #F2921D 3px, rgba(255, 255, 255, 0) 3.8px, rgba(255, 255, 255, 0) 10px);
+    border-radius: 50%;
+    opacity: .5;
+    z-index: 1;
+    height: 160px;
+    width: 160px
+}
+}
+
+.my-wallet-cash{
+    position: relative;
+    overflow: hidden;
+ border-radius: 30px;
+.shape-rounded-circle {
+    transform: translate3d(0px, 8px, 0px);
+    position: absolute;
+    top: -2rem;
+    right: -2rem;
+    background-image: repeating-linear-gradient(-55deg, rgba(255, 255, 255, 0) 0.8px, #747ed1 1.6px, #747ed1 3px, rgba(255, 255, 255, 0) 3.8px, rgba(255, 255, 255, 0) 10px);
+    border-radius: 50%;
+    opacity: .5;
+    z-index: 1;
+    height: 160px;
+    width: 160px
+}
+.earning-icon-container{
+    background-color:#747ed1 !important ;
+}
+.earning-wallet-container{
+
+h4 , h2{
+        color: #747ed1 !important;
+    }
+}
+
+}
+
+
+
+
+
